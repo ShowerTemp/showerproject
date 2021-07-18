@@ -3,27 +3,56 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
+
+  // function top () {
+
+  // }
+
   return (
     <View style={styles.MainScreen}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <TextInput 
-          placeholder="my application goals" 
-          style={{borderColor : 'black',borderWidth: 1}}/>
-        <Button title="Lets see" />
+      <View style={styles.TopScreen}>
+
       </View>
-      
+      <View style={styles.middleScreen}>
+
+      </View>
+      <View style={styles.BottonScreen}>
+
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   MainScreen: {
-    padding: 30, 
-    marginTop: 40,
-    marginBottom: 30,
-    margin: 5,
-    borderRadius: 15,
     height: '100%',
-    backgroundColor: 'blue'
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  TopScreen :{
+    padding: 30, 
+    marginTop: '10%',  
+    height: 40,
+    backgroundColor: 'grey',
+    borderBottomColor: 'black',
+    borderBottomWidth: 2
+
+  },
+  middleScreen :{ 
+    borderRadius: 15,
+    backgroundColor: 'red', 
+    height: '40%', 
+    width: '85%',
+    marginLeft: '7%',
+  },
+  BottonScreen: {
+    borderRadius: 15,
+    bottom: 15,
+    width: '90%',
+    height: 90, 
+    left: '5%',
+    right: undefined, 
+    backgroundColor: 'black',
   }
 });
