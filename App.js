@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
     borderBottomColor: 'black',
     borderBottomWidth: 2
-
   },
   middleScreen :{ 
     borderRadius: 15,
