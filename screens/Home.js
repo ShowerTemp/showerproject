@@ -1,19 +1,20 @@
-import React from 'react';
-import { NavigationContainer } from "@react-navigation/native";
-import TabsOptions from "./Navigation/Tabs";
+ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-const App = () => {
+export default function Home() {
+    
 
-  return(
-    <NavigationContainer>
-      <TabsOptions/>
-    </NavigationContainer>
-  )
+  return (
+    <View style={styles.MainScreen}>
+      <View style={styles.TopScreen}>
+        <View style={styles.TopinnerScreen}></View>
+      </View>
+      <View style={styles.middleScreen}>
+        <Text>Shall it works Home page</Text>
+      </View> 
+    </View>
+  );
 }
-
-export default App;
-
 
 const styles = StyleSheet.create({
   MainScreen: {
@@ -23,12 +24,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   TopScreen :{
-    padding: 30, 
     marginTop: '10%',  
+    height: 45,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    paddingBottom: 10,
+  },
+  TopinnerScreen :{
     height: 40,
     backgroundColor: 'grey',
-    borderBottomColor: 'black',
-    borderBottomWidth: 2
   },
   middleScreen :{ 
     borderRadius: 15,
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
     height: '40%', 
     width: '85%',
     marginLeft: '7%',
+    bottom: '25%'
   },
   BottonScreen: {
     borderRadius: 15,
