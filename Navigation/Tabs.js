@@ -27,109 +27,116 @@ const TabsOption = () => {
             </View>
         </TouchableOpacity>
     )
-    
-    return (
-        <Tab.Navigator
-            tabBarOptions={{
-                showLabel: false,
-                style:{
-                    position: 'absolute',
-                    bottom: 25,
-                    left: 20,
-                    right: 20,
-                    elevation: 0,
-                    backgroundColor: '#ffffff',
-                    borderRadius: 15,
-                    height: 90,
-                    ... styles.shadow
-                }
-            }}
 
-        >
-            <Tab.Screen name="Users" component={UsersScreen} options = {{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Avatar.Icon 
-                            backgroundColor = 'black'
-                            size= {45}
-                            color= {focused ? '#e32f45' : '#748c94'} 
-                            icon="account" />
-                        <Text 
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
-                            >
-                            User
-                        </Text>
-                    </View>
-                )
-            }}/>
-            <Tab.Screen name="Notification" component={NotificationScreen} options = {{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Avatar.Icon 
-                            backgroundColor = 'black'
-                            size= {45}
-                            color= {focused ? '#e32f45' : '#748c94'} 
-                            icon="bell-ring-outline" />
-                        <Text 
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
-                            >
-                            Notification
-                        </Text>
-                    </View>
-                )
-            }}/>
-            <Tab.Screen name="Home" component={HomeScreen} options = {{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Avatar.Icon 
-                            backgroundColor = 'black'
-                            size= {45}
-                            color= {focused ? '#e32f45' : '#748c94'} 
-                            icon="home-variant" />
-                        <Text 
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
-                            >
-                            Home
-                        </Text>
-                    </View>
-                ),
-                // tabBarButton: (props) => (
-                //     <CustomTabBarButton {...props}/>
-                // )
-            }}/>
-            <Tab.Screen name="Connect" component={ConnectScreen} options = {{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Avatar.Icon 
-                            backgroundColor = 'black'
-                            size= {45}
-                            color= {focused ? '#e32f45' : '#748c94'} 
-                            icon="leak" />
-                        <Text 
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
-                            >
-                            Connect
-                        </Text>
-                    </View>
-                )
-            }}/>
-            <Tab.Screen name="Settings" component={SettingsScreen} options = {{
-                tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
-                        <Avatar.Icon 
-                            backgroundColor = 'black'
-                            size= {45}
-                            color= {focused ? '#e32f45' : '#748c94'} 
-                            icon="cogs" />
-                        <Text 
-                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
-                            >
-                            Settings
-                        </Text>
-                    </View>
-                )
-            }}/>
-        </Tab.Navigator>
+    const UserContainer = <Tab.Screen name="Users" component={UsersScreen} options = {{
+        tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                <Avatar.Icon 
+                    backgroundColor = 'black'
+                    size= {45}
+                    color= {focused ? '#e32f45' : '#748c94'} 
+                    icon="account" />
+                <Text 
+                    style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                    >
+                    User
+                </Text>
+            </View>
+        )
+        }}/>
+    const NotificationContainer = <Tab.Screen name="Notification" component={NotificationScreen} options = {{
+        tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                <Avatar.Icon 
+                    backgroundColor = 'black'
+                    size= {45}
+                    color= {focused ? '#e32f45' : '#748c94'} 
+                    icon="bell-ring-outline" />
+                <Text 
+                    style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                    >
+                    Notification
+                </Text>
+            </View>
+        )
+        }}/>
+    const HomeContainer = <Tab.Screen name="Home" component={HomeScreen} options = {{
+        tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                <Avatar.Icon 
+                    backgroundColor = 'black'
+                    size= {45}
+                    color= {focused ? '#e32f45' : '#748c94'} 
+                    icon="home-variant" />
+                <Text 
+                    style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                    >
+                    Home
+                </Text>
+            </View>
+        ),
+        // tabBarButton: (props) => (
+        //     <CustomTabBarButton {...props}/>
+        // )
+        }}/>
+    const ConnectContainer =<Tab.Screen name="Connect" component={ConnectScreen} options = {{
+        tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                <Avatar.Icon 
+                    backgroundColor = 'black'
+                    size= {45}
+                    color= {focused ? '#e32f45' : '#748c94'} 
+                    icon="leak" />
+                <Text 
+                    style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                    >
+                    Connect
+                </Text>
+            </View>
+        )
+        }}/>
+    const SettingsContainer = <Tab.Screen name="Settings" component={SettingsScreen} options = {{
+        tabBarIcon: ({focused}) => (
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                <Avatar.Icon 
+                    backgroundColor = 'black'
+                    size= {45}
+                    color= {focused ? '#e32f45' : '#748c94'} 
+                    icon="cogs" />
+                <Text 
+                    style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                    >
+                    Settings
+                </Text>
+            </View>
+        )
+        }}/>
+    const MainContainer = <Tab.Navigator
+    tabBarOptions={{
+        showLabel: false,
+        style:{
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            backgroundColor: '#ffffff',
+            borderRadius: 15,
+            height: 90,
+            marginTop: 4,
+            ... styles.shadow
+        }
+    }}
+    >
+        {UserContainer}
+        {NotificationContainer}
+        {HomeContainer}
+        {ConnectContainer}
+        {SettingsContainer}
+    </Tab.Navigator>
+   
+   return (
+    MainContainer    
     )
 };
 
