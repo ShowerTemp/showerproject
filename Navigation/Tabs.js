@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, Image, View, TouchableOpacity,Button } from 'react-native';
 import HomeScreen from '../screens/Home';
@@ -11,6 +11,22 @@ import { Avatar } from 'react-native-paper';
 const Tab = createBottomTabNavigator();
 
 const TabsOption = () => {
+    
+    const CustomTabBarButton = ({childern, onPress}) => (
+        <TouchableOpacity
+            style={{
+                top: -30,
+                justifyContent: 'center',
+                alignSelf: 'center',
+                ... styles.shadow
+            }}
+            onPress={onPress}
+        >
+            <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                {childern}
+            </View>
+        </TouchableOpacity>
+    )
     
     return (
         <Tab.Navigator
@@ -76,7 +92,10 @@ const TabsOption = () => {
                             Home
                         </Text>
                     </View>
-                )
+                ),
+                // tabBarButton: (props) => (
+                //     <CustomTabBarButton {...props}/>
+                // )
             }}/>
             <Tab.Screen name="Connect" component={ConnectScreen} options = {{
                 tabBarIcon: ({focused}) => (
