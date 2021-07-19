@@ -32,22 +32,84 @@ const TabsOption = () => {
         >
             <Tab.Screen name="Users" component={UsersScreen} options = {{
                 tabBarIcon: ({focused}) => (
-                    <View style={{alignItems: 'center', justifyContent: 'center', top: '10'}}>
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Avatar.Icon 
-                            size={36} 
-                            style={{
-                                width: 25,
-                                height: 25
-                            }}
+                            backgroundColor = 'black'
+                            size= {45}
                             color= {focused ? '#e32f45' : '#748c94'} 
                             icon="account" />
+                        <Text 
+                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                            >
+                            User
+                        </Text>
                     </View>
                 )
             }}/>
-            <Tab.Screen name="Notification" component={NotificationScreen}/>
-            <Tab.Screen name="Home" component={HomeScreen}/>
-            <Tab.Screen name="Connect" component={ConnectScreen}/>
-            <Tab.Screen name="Settings" component={SettingsScreen}/>
+            <Tab.Screen name="Notification" component={NotificationScreen} options = {{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Avatar.Icon 
+                            backgroundColor = 'black'
+                            size= {45}
+                            color= {focused ? '#e32f45' : '#748c94'} 
+                            icon="bell-ring-outline" />
+                        <Text 
+                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                            >
+                            Notification
+                        </Text>
+                    </View>
+                )
+            }}/>
+            <Tab.Screen name="Home" component={HomeScreen} options = {{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Avatar.Icon 
+                            backgroundColor = 'black'
+                            size= {45}
+                            color= {focused ? '#e32f45' : '#748c94'} 
+                            icon="home-variant" />
+                        <Text 
+                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                            >
+                            Home
+                        </Text>
+                    </View>
+                )
+            }}/>
+            <Tab.Screen name="Connect" component={ConnectScreen} options = {{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Avatar.Icon 
+                            backgroundColor = 'black'
+                            size= {45}
+                            color= {focused ? '#e32f45' : '#748c94'} 
+                            icon="leak" />
+                        <Text 
+                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                            >
+                            Connect
+                        </Text>
+                    </View>
+                )
+            }}/>
+            <Tab.Screen name="Settings" component={SettingsScreen} options = {{
+                tabBarIcon: ({focused}) => (
+                    <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
+                        <Avatar.Icon 
+                            backgroundColor = 'black'
+                            size= {45}
+                            color= {focused ? '#e32f45' : '#748c94'} 
+                            icon="cogs" />
+                        <Text 
+                            style={{color: focused ? '#e32f45' : '#748c94', fontSize: 12}}
+                            >
+                            Settings
+                        </Text>
+                    </View>
+                )
+            }}/>
         </Tab.Navigator>
     )
 };
