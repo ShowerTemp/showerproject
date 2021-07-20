@@ -7,8 +7,10 @@ import NotificationScreen from '../screens/Notification';
 import ConnectScreen from '../screens/Connect';
 import UsersScreen from '../screens/Users';
 import { Avatar } from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const TabsOption = () => {
     
@@ -27,7 +29,8 @@ const TabsOption = () => {
             </View>
         </TouchableOpacity>
     )
-
+    
+    // User Icon lead to User Screen
     const UserContainer = <Tab.Screen name="Users" component={UsersScreen} options = {{
         tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
@@ -44,6 +47,8 @@ const TabsOption = () => {
             </View>
         )
         }}/>
+        
+    // Notification Icon lead to Notification Screen
     const NotificationContainer = <Tab.Screen name="Notification" component={NotificationScreen} options = {{
         tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
@@ -60,6 +65,8 @@ const TabsOption = () => {
             </View>
         )
         }}/>
+
+    // Home Icon lead to Home Screen
     const HomeContainer = <Tab.Screen name="Home" component={HomeScreen} options = {{
         tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
@@ -79,6 +86,8 @@ const TabsOption = () => {
         //     <CustomTabBarButton {...props}/>
         // )
         }}/>
+
+    // Connection Icon lead to Connection Screen
     const ConnectContainer =<Tab.Screen name="Connect" component={ConnectScreen} options = {{
         tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
@@ -95,6 +104,8 @@ const TabsOption = () => {
             </View>
         )
         }}/>
+
+    // Settings Icon lead to Settings Screen
     const SettingsContainer = <Tab.Screen name="Settings" component={SettingsScreen} options = {{
         tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>

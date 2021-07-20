@@ -11,7 +11,7 @@ export default function Home() {
   // Temperature confirmation
   const [ToggleConfimation, ChangeToggleConfimation] = useState(false)
   // Temperature Number Confirmation
-  const [TemperatureConfirmation, ChangeTemperatureConfirmation] = useState('10')
+  const [TemperatureConfirmation, ChangeTemperatureConfirmation] = useState(10)
 
   const _goBack = () => console.log('Went back');
   const _handleMore = () => console.log('Shown more');
@@ -64,25 +64,14 @@ export default function Home() {
   </View>
   // Middle container area for temperature changing and confirmation
   const MiddleBarContainer = <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 100}}>
-    <Icon name="chevron-left" size={50} color="white" />
+    <Icon name="chevron-left" size={50} color="white" onPress={()=> ChangeTemperatureConfirmation(TemperatureConfirmation-1)}/>
     {TemperatureDegreeContainer}
-    <Icon name="chevron-right" size={50} color="white" />
+    <Icon name="chevron-right" size={50} color="white" onPress={()=> ChangeTemperatureConfirmation(TemperatureConfirmation+1)}/>
   </View>
 
   // Bottom container area for confirmation of the temperature 
   const BottomBarContainer = <View style={{display: 'flex', marginLeft: '40%'}}>
-    <Icon name={ToggleConfimation ? "toggle-on" : "toggle-off"}  size={'60'} class="fas fa-camera fa-7x" color="white" />
-    {/* <Avatar.Icon 
-      backgroundColor = {ToggleConfimation ? 'black' : 'white'}
-      // size= {105}
-      style={{
-
-        width: 150,
-        height: 50
-      }}
-      color= {ToggleConfimation ? '#ffffff' : 'black'} 
-      icon={ ToggleConfimation ? "toggle-switch" : "toggle-switch-off"} /> */}
-      {/* <RightCircleOutlined /> */}
+    <Icon name={ToggleConfimation ? "toggle-on" : "toggle-off"}  size={'60'} class="fas fa-camera fa-7x" color="white" onPress={()=> ChangeToggleConfimation(!ToggleConfimation)}/>
   </View> 
   
   //Container to info of temperature and confirmation
