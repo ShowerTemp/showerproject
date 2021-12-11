@@ -51,6 +51,11 @@ export default function Home() {
     {ConnectContainer}
   </View>
 
+  //creating the Temperature template and the actual temperature 
+  const actualTemp = <view>
+
+  </view>
+  
   // Temperature Degree number
   const TemperatureDegreeContainer = <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
     <Text style={{color: 'white', fontSize: '50'}}>{TemperatureConfirmation}</Text>
