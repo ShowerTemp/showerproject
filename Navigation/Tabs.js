@@ -139,11 +139,11 @@ const TabsOption = () => {
         }
     }}
     >
-        {UserContainer}
-        {NotificationContainer}
+        {/* {UserContainer} */}
+        {/* {NotificationContainer} */}
         {HomeContainer}
-        {ConnectContainer}
-        {SettingsContainer}
+        {/* {ConnectContainer} */}
+        {/* {SettingsContainer} */}
     </Tab.Navigator>
    
    return (
