@@ -51,10 +51,6 @@ export default function Home() {
     {ConnectContainer}
   </View>
 
-  //creating the Temperature template and the actual temperature 
-  const actualTemp = <view>
-
-  </view>
   
   // Temperature Degree number
   const TemperatureDegreeContainer = <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
@@ -65,10 +61,14 @@ export default function Home() {
       size= {100}
       color= {'white' } 
       icon="temperature-celsius" />
-    {/* <Icon name="thermometer-half" size={60} color="white" /> */}
+    <Icon name="thermometer-half" size={60} color="white" />
   </View>
   // Middle container area for temperature changing and confirmation
-  const MiddleBarContainer = <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 100}}>
+  const TopBarContainerTemp = <View style={{marginTop: 20}}>
+    <Text style={{fontSize: "20px"}}>Current Temperature: </Text>
+  </View>
+  // Middle container area for temperature changing and confirmation
+  const MiddleBarContainer = <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 40}}>
     <Icon name="chevron-left" size={50} color="white" onPress={()=> ChangeTemperatureConfirmation(TemperatureConfirmation-1)}/>
     {TemperatureDegreeContainer}
     <Icon name="chevron-right" size={50} color="white" onPress={()=> ChangeTemperatureConfirmation(TemperatureConfirmation+1)}/>
@@ -80,7 +80,8 @@ export default function Home() {
   </View> 
   
   //Container to info of temperature and confirmation
-  const InfoContainer = <View style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+  const InfoContainer = <View style={{display: 'flex', flexDirection: 'column', }}>
+    {TopBarContainerTemp}
     {MiddleBarContainer}
     {BottomBarContainer} 
   </View>
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    // justifyContent: 'space-between'
   }, 
   middleScreen :{ 
     paddingLeft: 25,
@@ -115,7 +116,9 @@ const styles = StyleSheet.create({
     height: '40%', 
     width: '85%',
     marginLeft: '7%',
-    bottom: '25%'
+    bottom: '25%',
+    marginTop: "100%"
+    
   },
   TitlesStyle:{
     color: 'white',
